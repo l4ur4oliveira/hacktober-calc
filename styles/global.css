@@ -1,0 +1,91 @@
+:root {
+  
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+}
+
+#machine {
+  width: 90%;
+  padding: 1rem;
+  background-color: lightgray;
+  border-radius: 1rem;
+  box-shadow: 8px 8px 8px 5px rgba(0, 0, 0, 0.3);
+}
+
+#screen {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: gray;
+  color: black;
+  font-size: 2rem;
+  text-align: right;
+  border-radius: .5rem;
+}
+
+#buttons {
+  display: flex;
+}
+
+button {
+  margin: .2rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+button:hover {
+  filter: brightness(0.6);
+}
+
+.numbers, .operators {
+  display: grid;
+}
+
+.numbers {
+  width: 70%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.numbers button {
+  color: white;
+  background-color: #333;
+  border: 2px solid black;
+  border-radius: .5rem;
+}
+
+.operators {
+  width: 30%;
+}
+
+.operators button {
+  color: white;
+  background-color: #900;
+  border: 2px solid #300;
+  border-radius: .5rem;
+}
+
+@media (min-width: 370px) {
+  #machine {
+    width: 335px;
+  }
+}
