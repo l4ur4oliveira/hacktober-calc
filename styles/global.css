@@ -1,6 +1,5 @@
-:root {
-  
-}
+@import url("themes.css");
+
 
 *, *::after, *::before {
   margin: 0;
@@ -20,22 +19,99 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: var(--body-bgcolor);
+}
+
+button,
+a {
+  transition: all 0.1s;
+}
+
+button:hover,
+a:hover {
+  filter: brightness(0.6);
 }
 
 #machine {
   width: 90%;
   padding: 1rem;
-  background-color: lightgray;
+  background-color: var(--machine-bgcolor);
   border-radius: 1rem;
   box-shadow: 8px 8px 8px 5px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar {
+  position: relative;
+}
+
+.toolbar-option__themes {
+  display: inline-block;
+  margin-bottom: .8rem;
+  padding: .5rem;
+  background-color: var(--screen-bgcolor);
+  opacity: .8;
+  border-radius: .2rem;
+  font-size: .8rem;
+  color: var(--screen-color);
+  text-decoration: none;
+}
+
+.toolbar__themes {
+  visibility: hidden;
+  height: 0;
+  width: 80%;
+  padding: .3rem;
+  background-color: rgba(250, 250, 250, .8);
+  font-size: 1rem;
+  list-style: none;
+  box-shadow: 3px 3px 3px 0 rgb(0, 0, 0, .2);
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  transition: all 0.2s;
+}
+
+.toolbar__themes.open {
+  visibility: visible;
+  height: 100%;
+}
+
+.toolbar__themes li {
+  margin-bottom: .5rem;
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.toolbar__themes li:last-child {
+  margin-bottom: 0;
+}
+
+.toolbar__themes li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 6px;
+  right: 0;
+  transition: width 0.3s;
+}
+
+.toolbar__themes li:hover::after {
+  width: 70%;
+}
+
+.toolbar__themes.open li {
+  opacity: 1;
 }
 
 #screen {
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: gray;
-  color: black;
+  background-color: var(--screen-bgcolor);
+  color: var(--screen-color);
   font-size: 2rem;
   text-align: right;
   border-radius: .5rem;
@@ -50,11 +126,6 @@ button {
   padding: 1rem;
   font-size: 1.6rem;
   cursor: pointer;
-  transition: all 0.1s;
-}
-
-button:hover {
-  filter: brightness(0.6);
 }
 
 .numbers, .operators {
@@ -67,9 +138,9 @@ button:hover {
 }
 
 .numbers button {
-  color: white;
-  background-color: #333;
-  border: 2px solid black;
+  color: var(--btn-numbers-color);
+  background-color: var(--btn-numbers-bgcolor);
+  border: 2px solid var(--btn-numbers-border);
   border-radius: .5rem;
 }
 
@@ -78,9 +149,9 @@ button:hover {
 }
 
 .operators button {
-  color: white;
-  background-color: #900;
-  border: 2px solid #300;
+  color: var(--btn-operators-color);
+  background-color: var(--btn-operators-bgcolor);
+  border: 2px solid var(--btn-operators-border);
   border-radius: .5rem;
 }
 
