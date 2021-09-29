@@ -44,7 +44,7 @@ a:hover {
   position: relative;
 }
 
-.toolbar-option__themes {
+.toolbar-option {
   display: inline-block;
   margin-bottom: .8rem;
   padding: .5rem;
@@ -108,13 +108,26 @@ a:hover {
 }
 
 #screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 5rem;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: .5rem 1rem;
   background-color: var(--screen-bgcolor);
   color: var(--screen-color);
-  font-size: 2rem;
   text-align: right;
   border-radius: .5rem;
+  overflow-x: hidden;
+}
+
+#screen .screen__staged {
+  font-size: 1rem;
+}
+
+#screen .screen__current {
+  font-size: 2rem;
 }
 
 #buttons {

@@ -15,33 +15,37 @@
 
   <main id="machine">
     <nav class="toolbar">
-      <a href="#" class="toolbar-option__themes">Themes</a>
+      <a class="toolbar-option themes">Themes</a>
+      <a class="toolbar-option clear">Clear</a>
       <ul class="toolbar__themes">
         <li class="default">Default</li>
         <li class="dracula">Dracula</li>
       </ul>
     </nav>
-    <div id="screen">1234567890</div>
+    <div id="screen">
+      <span class="screen__staged"></span>
+      <span class="screen__current"></span>
+    </div>
     <section id="buttons">
       <section class="numbers">
-        <button value="1">1</button>
-        <button value="2">2</button>
-        <button value="3">3</button>
-        <button value="4">4</button>
-        <button value="5">5</button>
-        <button value="6">6</button>
-        <button value="7">7</button>
-        <button value="8">8</button>
-        <button value="9">9</button>
-        <button value="0">0</button>
-        <button>.</button>
-        <button>=</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-number>0</button>
+        <button data-number>.</button>
+        <button data-operation>=</button>
       </section>
       <section class="operators">
-        <button>/</button>
-        <button>*</button>
-        <button>-</button>
-        <button>+</button>
+        <button data-operation>/</button>
+        <button data-operation>*</button>
+        <button data-operation>-</button>
+        <button data-operation>+</button>
       </section>
     </section>
   </main>
