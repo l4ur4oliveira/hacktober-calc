@@ -54,6 +54,7 @@ a:hover {
   font-size: .8rem;
   color: var(--screen-color);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .toolbar__themes {

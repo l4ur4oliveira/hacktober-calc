@@ -1,3 +1,5 @@
+import { sum, subtraction, multiplication, division } from './operations.js';
+
 const root = document.querySelector('html');
 
 const toolbarThemes = document.querySelector('.toolbar-option.themes');
