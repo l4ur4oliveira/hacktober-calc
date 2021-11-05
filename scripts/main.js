@@ -31,16 +31,38 @@ themeListItems.forEach(theme => {
   })
 });
 
-// Handle buttons
+// Handle screen
+const currentNumber = document.querySelector('#screen .screen__current');
+const stagedOperation = document.querySelector('#screen .screen__staged');
 function showCurrentNumber(number) {
-  const currentNumber = document.querySelector('#screen .screen__current');
   currentNumber.innerHTML += number;
 }
+function showStagedOperation() {
+  stagedOperation.innerHTML += currentNumber.textContent;
+  currentNumber.innerHTML = '';
+}
 
+// Handle buttons
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 numberButtons.forEach(number => {
-  number.addEventListener('click', () => {
-    showCurrentNumber(number.textContent);
+  number.addEventListener('click', (e) => {
+    showCurrentNumber(e.target.textContent);
+  });
+});
+
+operationButtons.forEach(operation => {
+  operation.addEventListener('click', (e) => {
+    const operator = e.target.textContent;
+
+    if (operator !== '=' && currentNumber.innerHTML !== '') {
+      showCurrentNumber(operator);
+      showStagedOperation();
+    }
+
+    if (operator === '=' && currentNumber.innerHTML !== '' && stagedOperation.innerHTML !== '') {
+      currentNumber.innerHTML = eval(stagedOperation.innerHTML + currentNumber.innerHTML);
+      stagedOperation.innerHTML = '';
+    }
   });
 });
