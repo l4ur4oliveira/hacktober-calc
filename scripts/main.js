@@ -51,17 +51,41 @@ numberButtons.forEach(number => {
   });
 });
 
+// Handle calc
+let firstNumber = 0, lastNumber = 0, operationSymbol = '';
+
 operationButtons.forEach(operation => {
   operation.addEventListener('click', (e) => {
     const operator = e.target.textContent;
 
     if (operator !== '=' && currentNumber.innerHTML !== '') {
+      firstNumber = parseInt(currentNumber.textContent);
       showCurrentNumber(operator);
       showStagedOperation();
+      operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
     }
 
-    if (operator === '=' && currentNumber.innerHTML !== '' && stagedOperation.innerHTML !== '') {
-      currentNumber.innerHTML = eval(stagedOperation.innerHTML + currentNumber.innerHTML);
+    if (operator === '=' && currentNumber.innerHTML !== '' && firstNumber !== 0) {
+      lastNumber = parseInt(currentNumber.textContent);
+
+      switch (operationSymbol) {
+        case "+":
+          currentNumber.innerHTML = sum(firstNumber, lastNumber);
+          break;
+      
+        case "-":
+          currentNumber.innerHTML = subtraction(firstNumber, lastNumber);
+          break;
+        
+        case "*":
+          currentNumber.innerHTML = multiplication(firstNumber, lastNumber);
+          break;
+        
+        case "/":
+          currentNumber.innerHTML = division(firstNumber, lastNumber);
+          break;
+      }
+
       stagedOperation.innerHTML = '';
     }
   });
