@@ -1,17 +1,21 @@
-# Calculator Project :abacus:
+# ![Hacktoberfest Logo](src/images/hacktoberfest.svg) **2022**
 
 ## What?
 
-A simple calculator using HTML, CSS and Javascript.
+***Hacktober Calc*** :abacus: is a simple calculator using HTML, CSS and Javascript.
 
 ## Why?
 
-It's the simplest project to exercise programming skills, DOM manipulation and layout construction.
+It's the simplest project to exercise programming skills, DOM manipulation and layout construction. Plus, you can start to contribute to Open Source from this project and learn the Git workflow.
 
-## Roadmap
+## How to contribute?
 
-- Create base layout
-- Include some themes
-- Add screen upload (input and clear)
-- Add saved operation
-- Write basic functions tests
+- Including some themes
+- Adding new math operations
+- Adding keybord usage
+- Writing some tests
+- Refactoring something
+- Translating
+- Using your creativity \o/
+
+Do you need a guide about PR? Watch [this video](https://youtu.be/nkuYH40cjo4).

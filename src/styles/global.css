@@ -170,6 +170,13 @@ button {
   border-radius: .5rem;
 }
 
+.hacktoberfest-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+}
+
 @media (min-width: 370px) {
   #machine {
     width: 335px;

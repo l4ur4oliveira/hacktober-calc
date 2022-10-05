@@ -13,4 +13,3 @@ function division(x, y) {
 }
 
 export { sum, subtraction, multiplication, division };
-// module.exports = { sum, subtraction, multiplication, division };
