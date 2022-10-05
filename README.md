@@ -1,4 +1,4 @@
-# ![Hacktoberfest Logo](src/images/hacktoberfest.svg) **2022**
+<h1 align="center"><img src="src/images/hacktoberfest.svg" alt="Hacktobjerfest Logo"><br>2022</h1>
 
 ## What?
 
