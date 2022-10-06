@@ -19,3 +19,12 @@ It's the simplest project to exercise programming skills, DOM manipulation and l
 - Using your creativity \o/
 
 Do you need a guide about PR? Watch [this video](https://youtu.be/nkuYH40cjo4).
+
+## Hall of Fame
+
+<div align="center">
+  <a href="https://github.com/l4ur4oliveira/hacktober-calc/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=l4ur4oliveira/hacktober-calc" />
+  </a>
+  <br>Made with <a href="https://contrib.rocks">contrib.rocks</a>
+</div>
