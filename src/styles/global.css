@@ -74,7 +74,7 @@ a:hover {
 
 .toolbar__themes.open {
   visibility: visible;
-  height: 100%;
+  height: 150%;
 }
 
 .toolbar__themes li {
