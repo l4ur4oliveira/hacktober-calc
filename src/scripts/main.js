@@ -12,6 +12,20 @@ toolbarThemes.addEventListener('click', event => {
   themeList.classList.toggle('open');
 });
 
+document.addEventListener("mouseup", function (e) {
+  const target = document.querySelector('.toolbar__themes.open');
+  const toolbarThemes = document.querySelector('.toolbar-option.themes');
+
+  if (!target) {
+    return;
+  }
+
+  if (e.target.className !== toolbarThemes.className) {
+    target.classList.remove("open");
+  }
+  return;
+});
+
 toolbarClear.addEventListener('click', event => {
   event.preventDefault();
   
