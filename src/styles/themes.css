@@ -23,3 +23,16 @@
   --btn-operators-bgcolor: #ff79c6;
   --btn-operators-border: #383a59;
 }
+
+.amoled:root {
+  --body-bgcolor: #000000;
+  --machine-bgcolor: #0c0c0c;
+  --screen-bgcolor: #020202;
+  --screen-color: #59b2d0;
+  --btn-numbers-color: #ffffff;
+  --btn-numbers-bgcolor: #000000;
+  --btn-numbers-border: #202021;
+  --btn-operators-color: #ffffff;
+  --btn-operators-bgcolor: #000000;
+  --btn-operators-border: #202021;
+}
