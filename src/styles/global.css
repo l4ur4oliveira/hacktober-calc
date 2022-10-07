@@ -75,7 +75,7 @@ a:hover {
 .toolbar__themes.open {
   margin-top: 10px;
   visibility: visible;
-  height: 225%;
+  height: auto;
   border-radius: 8px;
 }
 
@@ -129,11 +129,6 @@ a:hover {
   font-size: 1rem;
 }
 
-/* #screen .screen__current {
-  height: 45px;
-  font-size: 2rem;
-} */
-
 #buttons {
   display: flex;
 }
@@ -185,10 +180,6 @@ button {
   }
 }
 
-
-
-
-/* media query for overflowing answer text */
 /* media query for overflowing answer text */
 @media only screen and (max-width: 400px){
   #screen .screen__current {
