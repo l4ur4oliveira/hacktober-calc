@@ -73,8 +73,10 @@ a:hover {
 }
 
 .toolbar__themes.open {
+  margin-top: 10px;
   visibility: visible;
-  height: 150%;
+  height: 185%;
+  border-radius: 8px;
 }
 
 .toolbar__themes li {
