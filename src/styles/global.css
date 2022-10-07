@@ -75,7 +75,7 @@ a:hover {
 .toolbar__themes.open {
   margin-top: 10px;
   visibility: visible;
-  height: 185%;
+  height: 225%;
   border-radius: 8px;
 }
 

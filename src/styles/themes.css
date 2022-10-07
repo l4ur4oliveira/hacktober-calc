@@ -49,3 +49,16 @@
   --btn-operators-bgcolor: #980d0d;
   --btn-operators-border: #202021;
 }
+
+.candy:root{
+  --body-bgcolor: #FFFFFF;
+  --machine-bgcolor: #ededed;
+  --screen-bgcolor: #fffefe;
+  --screen-color: #000000;
+  --btn-numbers-color: #000000;
+  --btn-numbers-bgcolor: #65fcff;
+  --btn-numbers-border: #65fcff;
+  --btn-operators-color: #000000;
+  --btn-operators-bgcolor: #ff6e6b;
+  --btn-operators-border: #ff6e6b;
+}
