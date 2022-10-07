@@ -36,3 +36,16 @@
   --btn-operators-bgcolor: #000000;
   --btn-operators-border: #202021;
 }
+
+.ocean:root {
+  --body-bgcolor: #095ca0;
+  --machine-bgcolor: #03092a;
+  --screen-bgcolor: #020202;
+  --screen-color: #59b2d0;
+  --btn-numbers-color: #ffffff;
+  --btn-numbers-bgcolor: #03385e;
+  --btn-numbers-border: #171736;
+  --btn-operators-color: #ffffff;
+  --btn-operators-bgcolor: #980d0d;
+  --btn-operators-border: #202021;
+}
