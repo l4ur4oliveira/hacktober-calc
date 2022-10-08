@@ -35,3 +35,42 @@
   --btn-operators-bgcolor: #383d32;
   --btn-operators-border: #272822;
 }
+
+.amoled:root {
+  --body-bgcolor: #000000;
+  --machine-bgcolor: #0c0c0c;
+  --screen-bgcolor: #020202;
+  --screen-color: #59b2d0;
+  --btn-numbers-color: #ffffff;
+  --btn-numbers-bgcolor: #000000;
+  --btn-numbers-border: #202021;
+  --btn-operators-color: #ffffff;
+  --btn-operators-bgcolor: #000000;
+  --btn-operators-border: #202021;
+}
+
+.ocean:root {
+  --body-bgcolor: #095ca0;
+  --machine-bgcolor: #03092a;
+  --screen-bgcolor: #020202;
+  --screen-color: #59b2d0;
+  --btn-numbers-color: #ffffff;
+  --btn-numbers-bgcolor: #03385e;
+  --btn-numbers-border: #171736;
+  --btn-operators-color: #ffffff;
+  --btn-operators-bgcolor: #980d0d;
+  --btn-operators-border: #202021;
+}
+
+.candy:root{
+  --body-bgcolor: #FFFFFF;
+  --machine-bgcolor: #ededed;
+  --screen-bgcolor: #fffefe;
+  --screen-color: #000000;
+  --btn-numbers-color: #000000;
+  --btn-numbers-bgcolor: #65fcff;
+  --btn-numbers-border: #65fcff;
+  --btn-operators-color: #000000;
+  --btn-operators-bgcolor: #ff6e6b;
+  --btn-operators-border: #ff6e6b;
+}

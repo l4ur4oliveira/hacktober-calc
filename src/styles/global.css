@@ -110,10 +110,12 @@ a:hover {
 }
 
 .toolbar__themes.open {
+  margin-top: 10px;
   visibility: visible;
   scale: 1;
-  /* height: auto; */
   transform-origin: left top;
+  height: auto;
+  border-radius: 8px;
 }
 
 .toolbar__themes li {
@@ -166,11 +168,6 @@ a:hover {
   font-size: 1rem;
 }
 
-#screen .screen__current {
-  height: 45px;
-  font-size: 2rem;
-}
-
 #buttons {
   display: flex;
 }
@@ -221,3 +218,19 @@ button {
     width: 335px;
   }
 }
+
+/* media query for overflowing answer text */
+@media only screen and (max-width: 400px){
+  #screen .screen__current {
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 401px){
+  #screen .screen__current {
+    height: 45px;
+    font-size: 1.7rem;
+  }
+}
+
