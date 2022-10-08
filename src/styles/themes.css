@@ -23,6 +23,18 @@
   --btn-operators-bgcolor: #ff79c6;
   --btn-operators-border: #383a59;
 }
+.monokai:root {
+  --body-bgcolor: #3e3d32;
+  --machine-bgcolor: #cfcfc2;
+  --screen-bgcolor: #3e3d32;
+  --screen-color: #fd971f;
+  --btn-numbers-color: #e7e7e7;
+  --btn-numbers-bgcolor: #3e3d32;
+  --btn-numbers-border: #272822;
+  --btn-operators-color: #f92672;
+  --btn-operators-bgcolor: #383d32;
+  --btn-operators-border: #272822;
+}
 
 .amoled:root {
   --body-bgcolor: #000000;
