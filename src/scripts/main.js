@@ -8,7 +8,6 @@ const themeList = document.querySelector('.toolbar__themes');
 
 toolbarThemes.addEventListener('click', event => {
   event.preventDefault();
-  
   themeList.classList.toggle('open');
 });
 
@@ -28,7 +27,6 @@ document.addEventListener("mouseup", function (e) {
 
 toolbarClear.addEventListener('click', event => {
   event.preventDefault();
-  
   const screen = document.querySelectorAll('#screen span');
   screen.forEach(item => {
     if (item.innerHTML != '') {
@@ -65,6 +63,20 @@ numberButtons.forEach(number => {
   });
 });
 
+// keyboard press for number and clear(backspcae)
+document.addEventListener("keydown", function (e) {
+  if (e.key == parseInt(e.key)) {
+    showCurrentNumber(e.key);
+  } else if (e.key === 'Backspace') {
+    const screen = document.querySelectorAll('#screen span');
+    screen.forEach(item => {
+      if (item.innerHTML != '') {
+        item.innerHTML = '';
+      }
+    })
+  }
+});
+
 // Handle calc
 let firstNumber = 0, lastNumber = 0, operationSymbol = '';
 
@@ -86,15 +98,15 @@ operationButtons.forEach(operation => {
         case "+":
           currentNumber.innerHTML = sum(firstNumber, lastNumber);
           break;
-      
+
         case "-":
           currentNumber.innerHTML = subtraction(firstNumber, lastNumber);
           break;
-        
+
         case "*":
           currentNumber.innerHTML = multiplication(firstNumber, lastNumber);
           break;
-        
+
         case "/":
           currentNumber.innerHTML = division(firstNumber, lastNumber);
           break;
