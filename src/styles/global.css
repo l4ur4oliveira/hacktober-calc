@@ -116,6 +116,7 @@ a:hover {
   transform-origin: left top;
   height: auto;
   border-radius: 8px;
+  z-index: 1;
 }
 
 .toolbar__themes li {
