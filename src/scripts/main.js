@@ -63,6 +63,21 @@ numberButtons.forEach(number => {
   });
 });
 
+function disableMathOperators(){
+  const stagedOperation = document.querySelector('.operators');
+  console.log(stagedOperation)
+  stagedOperation.setAttribute("disabled", true)
+  console.log('disabled')
+}
+
+function enableMathOperators(){
+  console.log('enable')
+  const stagedOperation = document.querySelector('.operators');
+  console.log(stagedOperation)
+  stagedOperation.removeAttribute("disabled")
+  console.log('disabled')
+}
+
 // keyboard press for number and clear(backspcae)
 document.addEventListener("keydown", function (e) {
   if (e.key == parseInt(e.key)) {
@@ -83,6 +98,7 @@ let firstNumber = 0, lastNumber = 0, operationSymbol = '';
 operationButtons.forEach(operation => {
   operation.addEventListener('click', (e) => {
     const operator = e.target.textContent;
+    disableMathOperators()
 
     if (operator !== '=' && currentNumber.innerHTML !== '') {
       if (currentNumber.innerHTML.includes('.')) {
@@ -96,6 +112,7 @@ operationButtons.forEach(operation => {
     }
 
     if (operator === '=' && currentNumber.innerHTML !== '' && firstNumber !== 0) {
+      enableMathOperators()
       if (currentNumber.innerHTML.includes('.')) {
         lastNumber = parseFloat(currentNumber.textContent);
       } else {
