@@ -98,3 +98,15 @@
   --btn-operators-bgcolor: #F07167;
   --btn-operators-border: #F07167;
 }
+.vintage:root{
+  --body-bgcolor: #4a4849;
+  --machine-bgcolor: #284c4c;
+  --screen-bgcolor: #a45e5f;
+  --screen-color: #ffffff;
+  --btn-numbers-color: #000000;
+  --btn-numbers-bgcolor: #a45e5f;
+  --btn-numbers-border: #a45e5f;
+  --btn-operators-color: #000000;
+  --btn-operators-bgcolor: #ebb7b6;
+  --btn-operators-border: #ebb7b6;
+}
