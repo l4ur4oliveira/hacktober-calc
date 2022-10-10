@@ -85,14 +85,22 @@ operationButtons.forEach(operation => {
     const operator = e.target.textContent;
 
     if (operator !== '=' && currentNumber.innerHTML !== '') {
-      firstNumber = parseInt(currentNumber.textContent);
+      if (currentNumber.innerHTML.includes('.')) {
+        firstNumber = parseFloat(currentNumber.textContent);
+      } else {
+        firstNumber = parseInt(currentNumber.textContent);
+      }
       showCurrentNumber(operator);
       showStagedOperation();
       operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
     }
 
     if (operator === '=' && currentNumber.innerHTML !== '' && firstNumber !== 0) {
-      lastNumber = parseInt(currentNumber.textContent);
+      if (currentNumber.innerHTML.includes('.')) {
+        lastNumber = parseFloat(currentNumber.textContent);
+      } else {
+        lastNumber = parseInt(currentNumber.textContent);
+      }
 
       switch (operationSymbol) {
         case "+":
