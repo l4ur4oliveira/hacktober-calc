@@ -27,6 +27,7 @@ document.addEventListener("mouseup", function (e) {
 
 toolbarClear.addEventListener('click', event => {
   event.preventDefault();
+  enableMathOperators();
   const screen = document.querySelectorAll('#screen span');
   screen.forEach(item => {
     if (item.innerHTML != '') {
@@ -63,19 +64,18 @@ numberButtons.forEach(number => {
   });
 });
 
-function disableMathOperators(){
-  const stagedOperation = document.querySelector('.operators');
-  console.log(stagedOperation)
-  stagedOperation.setAttribute("disabled", true)
-  console.log('disabled')
+function disableMathOperators() {
+  const stagedOperation = document.querySelectorAll('.operators button');
+  for (var i = 0; i < stagedOperation.length; i++) {
+    stagedOperation[i].disabled=true;
+  }
 }
 
-function enableMathOperators(){
-  console.log('enable')
-  const stagedOperation = document.querySelector('.operators');
-  console.log(stagedOperation)
-  stagedOperation.removeAttribute("disabled")
-  console.log('disabled')
+function enableMathOperators() {
+  const stagedOperation = document.querySelectorAll('.operators button');
+  for (var i = 0; i < stagedOperation.length; i++) {
+    stagedOperation[i].disabled=false;
+  }
 }
 
 // keyboard press for number and clear(backspcae)
@@ -98,7 +98,6 @@ let firstNumber = 0, lastNumber = 0, operationSymbol = '';
 operationButtons.forEach(operation => {
   operation.addEventListener('click', (e) => {
     const operator = e.target.textContent;
-    disableMathOperators()
 
     if (operator !== '=' && currentNumber.innerHTML !== '') {
       if (currentNumber.innerHTML.includes('.')) {
@@ -108,11 +107,12 @@ operationButtons.forEach(operation => {
       }
       showCurrentNumber(operator);
       showStagedOperation();
+      disableMathOperators();
       operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
     }
 
     if (operator === '=' && currentNumber.innerHTML !== '' && firstNumber !== 0) {
-      enableMathOperators()
+      
       if (currentNumber.innerHTML.includes('.')) {
         lastNumber = parseFloat(currentNumber.textContent);
       } else {
@@ -136,7 +136,7 @@ operationButtons.forEach(operation => {
           currentNumber.innerHTML = division(firstNumber, lastNumber);
           break;
       }
-
+      enableMathOperators();
       stagedOperation.innerHTML = '';
     }
   });
