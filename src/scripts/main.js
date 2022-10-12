@@ -66,16 +66,16 @@ numberButtons.forEach(number => {
 
 function disableMathOperators() {
   const stagedOperation = document.querySelectorAll('.operators button');
-  for (var i = 0; i < stagedOperation.length; i++) {
-    stagedOperation[i].disabled=true;
-  }
+  stagedOperation.forEach(btn => {
+    btn.disabled=true;
+  });
 }
 
 function enableMathOperators() {
   const stagedOperation = document.querySelectorAll('.operators button');
-  for (var i = 0; i < stagedOperation.length; i++) {
-    stagedOperation[i].disabled=false;
-  }
+  stagedOperation.forEach(btn => {
+    btn.disabled=false;
+  });
 }
 
 // keyboard press for number and clear(backspcae)
