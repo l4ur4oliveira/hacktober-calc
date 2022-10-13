@@ -27,6 +27,7 @@ document.addEventListener("mouseup", function (e) {
 
 toolbarClear.addEventListener('click', event => {
   event.preventDefault();
+  enableMathOperators();
   const screen = document.querySelectorAll('#screen span');
   screen.forEach(item => {
     if (item.innerHTML != '') {
@@ -63,6 +64,20 @@ numberButtons.forEach(number => {
   });
 });
 
+function disableMathOperators() {
+  const stagedOperation = document.querySelectorAll('.operators button');
+  stagedOperation.forEach(btn => {
+    btn.disabled=true;
+  });
+}
+
+function enableMathOperators() {
+  const stagedOperation = document.querySelectorAll('.operators button');
+  stagedOperation.forEach(btn => {
+    btn.disabled=false;
+  });
+}
+
 // keyboard press for number and clear(backspcae)
 document.addEventListener("keydown", function (e) {
   if (e.key == parseInt(e.key)) {
@@ -92,10 +107,12 @@ operationButtons.forEach(operation => {
       }
       showCurrentNumber(operator);
       showStagedOperation();
+      disableMathOperators();
       operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
     }
 
     if (operator === '=' && currentNumber.innerHTML !== '' && firstNumber !== 0) {
+      
       if (currentNumber.innerHTML.includes('.')) {
         lastNumber = parseFloat(currentNumber.textContent);
       } else {
@@ -119,7 +136,7 @@ operationButtons.forEach(operation => {
           currentNumber.innerHTML = division(firstNumber, lastNumber);
           break;
       }
-
+      enableMathOperators();
       stagedOperation.innerHTML = '';
     }
   });
