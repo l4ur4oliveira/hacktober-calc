@@ -1,4 +1,4 @@
-import { sum, subtraction, multiplication, division } from './operations.js';
+import { sum, subtraction, multiplication, division, log, power, factorial } from './operations.js';
 
 const root = document.querySelector('html');
 
@@ -98,8 +98,17 @@ let firstNumber = 0, lastNumber = 0, operationSymbol = '';
 operationButtons.forEach(operation => {
   operation.addEventListener('click', (e) => {
     const operator = e.target.textContent;
-
+    if(operator ==='=' && currentNumber.textContent.length>3 && currentNumber.textContent.slice(0,3)==='log'){
+      currentNumber.innerHTML = log(parseInt(currentNumber.textContent.slice(3)));
+      return;
+    }
+    if(operator==='=' && currentNumber.textContent.length>=2 && currentNumber.textContent[currentNumber.textContent.length-1]=='!'){
+      const num = parseInt(currentNumber.textContent.slice(0,currentNumber.textContent.length-1));
+      currentNumber.textContent = factorial(num)
+      return;
+    }
     if (operator !== '=' && currentNumber.innerHTML !== '') {
+      console.log(currentNumber.textContent);
       if (currentNumber.innerHTML.includes('.')) {
         firstNumber = parseFloat(currentNumber.textContent);
       } else {
@@ -134,6 +143,10 @@ operationButtons.forEach(operation => {
 
         case "/":
           currentNumber.innerHTML = division(firstNumber, lastNumber);
+          break;
+        case "^":
+          currentNumber.innerHTML = power(firstNumber,lastNumber);
+          console.log("HELLO")
           break;
       }
       enableMathOperators();
