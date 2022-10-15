@@ -185,8 +185,8 @@ button {
 }
 
 .numbers {
-  width: 70%;
-  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  grid-template-columns: auto auto auto;
 }
 
 .numbers button {
@@ -216,7 +216,7 @@ button {
 
 @media (min-width: 370px) {
   #machine {
-    width: 335px;
+    width: 435px;
   }
 }
 
