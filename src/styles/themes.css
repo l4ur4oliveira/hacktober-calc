@@ -110,3 +110,15 @@
   --btn-operators-bgcolor: #ebb7b6;
   --btn-operators-border: #ebb7b6;
 }
+.halloween:root {
+  --body-bgcolor: #000000;
+  --machine-bgcolor: #F58840;
+  --screen-bgcolor: #EADEDE;
+  --screen-color: #000000;
+  --btn-numbers-color: #000000;
+  --btn-numbers-bgcolor: rgba(184, 82, 82, 0.5);
+  --btn-numbers-border: #B85252;
+  --btn-operators-color: #F58840;
+  --btn-operators-bgcolor: #000000;
+  --btn-operators-border: #F58840;
+}
