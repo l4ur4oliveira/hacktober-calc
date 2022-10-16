@@ -122,3 +122,15 @@
   --btn-operators-bgcolor: #000000;
   --btn-operators-border: #F58840;
 }
+.carbon:root{
+  --body-bgcolor: #1f1f1f;
+  --machine-bgcolor: #404040;
+  --screen-bgcolor: #313131;
+  --screen-color: #ffffff;
+  --btn-numbers-color: #ffffff;
+  --btn-numbers-bgcolor: #313131;
+  --btn-numbers-border: #313131;
+  --btn-operators-color: #ffffff;
+  --btn-operators-bgcolor: #f66e0d;
+  --btn-operators-border: #f66e0d;
+}
