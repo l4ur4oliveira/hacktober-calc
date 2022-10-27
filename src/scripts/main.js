@@ -4,7 +4,7 @@ const root = document.querySelector('html');
 
 const toolbarThemes = document.querySelector('.toolbar-option.themes');
 const toolbarClear = document.querySelector('.toolbar-option.clear');
-const toolbarDelete = document.querySelector('.toolbar-option.delete');
+const toolbarDelete = document.querySelector('.toolbar-option.Delete');
 const themeList = document.querySelector('.toolbar__themes');
 
 toolbarThemes.addEventListener('click', event => {
@@ -40,9 +40,12 @@ toolbarClear.addEventListener('click', event => {
 toolbarDelete.addEventListener('click', event => {
   event.preventDefault();
   enableMathOperators();
-  if (currentNumber.innerHTML != '') {
-    currentNumber.innerHTML = currentNumber.innerHTML.slice(0,-1);
-  }
+  const screen = document.querySelectorAll('#screen span');
+  screen.forEach(item => {
+    if (item.innerHTML != '') {
+      currentNumber.innerHTML = currentNumber.innerHTML.slice(0,-1);
+    }
+  });
 });
 
 const themeListItems = document.querySelectorAll('.toolbar__themes li');
@@ -92,7 +95,6 @@ document.addEventListener("keydown", function (e) {
   if (e.key == parseInt(e.key)) {
     showCurrentNumber(e.key);
   } else if (e.key === 'Backspace') {
-    enableMathOperators();
     const screen = document.querySelectorAll('#screen span');
     screen.forEach(item => {
       if (item.innerHTML != '') {
