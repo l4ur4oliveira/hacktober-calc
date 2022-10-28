@@ -108,16 +108,46 @@ let firstNumber = 0, lastNumber = 0, operationSymbol = '';
 operationButtons.forEach(operation => {
   operation.addEventListener('click', (e) => {
     const operator = e.target.textContent;
-    if(operator ==='=' && currentNumber.textContent.length>3 && currentNumber.textContent.slice(0,3)==='log'){
-      currentNumber.innerHTML = log(parseInt(currentNumber.textContent.slice(3)));
-      return;
-    }
-    if(operator==='=' && currentNumber.textContent.length>=2 && currentNumber.textContent[currentNumber.textContent.length-1]=='!'){
-      const num = parseInt(currentNumber.textContent.slice(0,currentNumber.textContent.length-1));
-      currentNumber.textContent = factorial(num)
-      return;
-    }
-    if (operator !== '=' && currentNumber.innerHTML !== '') {
+
+    if (operator === '=') {
+      if (currentNumber.textContent.length > 3 && currentNumber.textContent.slice(0,3) === 'log') {
+        currentNumber.innerHTML = log(parseInt(currentNumber.textContent.slice(3)));
+        return;
+      } else if (currentNumber.textContent.length >= 2 && currentNumber.textContent[currentNumber.textContent.length - 1] === '!') {
+        const num = parseInt(currentNumber.textContent.slice(0, currentNumber.textContent.length - 1));
+        currentNumber.textContent = factorial(num);
+      } else if (currentNumber.innerHTML !== '' && firstNumber !== 0) {
+        if (currentNumber.innerHTML.includes('.')) {
+          lastNumber = parseFloat(currentNumber.textContent);
+        } else {
+          lastNumber = parseInt(currentNumber.textContent);
+        }
+  
+        switch (operationSymbol) {
+          case "+":
+            currentNumber.innerHTML = sum(firstNumber, lastNumber);
+            break;
+  
+          case "-":
+            currentNumber.innerHTML = subtraction(firstNumber, lastNumber);
+            break;
+  
+          case "*":
+            currentNumber.innerHTML = multiplication(firstNumber, lastNumber);
+            break;
+  
+          case "/":
+            currentNumber.innerHTML = division(firstNumber, lastNumber);
+            break;
+          case "^":
+            currentNumber.innerHTML = power(firstNumber,lastNumber);
+            console.log("HELLO")
+            break;
+        }
+        enableMathOperators();
+        stagedOperation.innerHTML = '';
+      }
+    } else if (currentNumber.innerHTML !== '') {
       console.log(currentNumber.textContent);
       if (currentNumber.innerHTML.includes('.')) {
         firstNumber = parseFloat(currentNumber.textContent);
@@ -128,39 +158,6 @@ operationButtons.forEach(operation => {
       showStagedOperation();
       disableMathOperators();
       operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
-    }
-
-    if (operator === '=' && currentNumber.innerHTML !== '' && firstNumber !== 0) {
-      
-      if (currentNumber.innerHTML.includes('.')) {
-        lastNumber = parseFloat(currentNumber.textContent);
-      } else {
-        lastNumber = parseInt(currentNumber.textContent);
-      }
-
-      switch (operationSymbol) {
-        case "+":
-          currentNumber.innerHTML = sum(firstNumber, lastNumber);
-          break;
-
-        case "-":
-          currentNumber.innerHTML = subtraction(firstNumber, lastNumber);
-          break;
-
-        case "*":
-          currentNumber.innerHTML = multiplication(firstNumber, lastNumber);
-          break;
-
-        case "/":
-          currentNumber.innerHTML = division(firstNumber, lastNumber);
-          break;
-        case "^":
-          currentNumber.innerHTML = power(firstNumber,lastNumber);
-          console.log("HELLO")
-          break;
-      }
-      enableMathOperators();
-      stagedOperation.innerHTML = '';
     }
   });
 });
