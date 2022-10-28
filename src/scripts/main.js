@@ -147,17 +147,22 @@ operationButtons.forEach(operation => {
         enableMathOperators();
         stagedOperation.innerHTML = '';
       }
-    } else if (currentNumber.innerHTML !== '') {
-      console.log(currentNumber.textContent);
-      if (currentNumber.innerHTML.includes('.')) {
-        firstNumber = parseFloat(currentNumber.textContent);
+    } else {
+      if (currentNumber.innerHTML !== '') {
+        console.log(currentNumber.textContent);
+        if (currentNumber.innerHTML.includes('.')) {
+          firstNumber = parseFloat(currentNumber.textContent);
+        } else {
+          firstNumber = parseInt(currentNumber.textContent);
+        }
+        showCurrentNumber(operator);
+        showStagedOperation();
+        
+        operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
       } else {
-        firstNumber = parseInt(currentNumber.textContent);
+        stagedOperation.innerHTML = stagedOperation.textContent.slice(0, -1) + operator;
+        operationSymbol = operator;
       }
-      showCurrentNumber(operator);
-      showStagedOperation();
-      disableMathOperators();
-      operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
     }
   });
 });
