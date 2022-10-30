@@ -69,6 +69,11 @@ const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 numberButtons.forEach(number => {
   number.addEventListener('click', (e) => {
+    if (resetInput) {
+      currentNumber.innerHTML = '';
+      resetInput = false;
+    }
+    
     showCurrentNumber(e.target.textContent);
   });
 });
@@ -103,7 +108,7 @@ document.addEventListener("keydown", function (e) {
 });
 
 // Handle calc
-let firstNumber = 0, lastNumber = 0, operationSymbol = '';
+let firstNumber = 0, lastNumber = 0, operationSymbol = '', resetInput = false;
 
 operationButtons.forEach(operation => {
   operation.addEventListener('click', (e) => {
@@ -144,8 +149,10 @@ operationButtons.forEach(operation => {
             console.log("HELLO")
             break;
         }
+
         enableMathOperators();
         stagedOperation.innerHTML = '';
+        resetInput = true;
       }
     } else {
       if (currentNumber.innerHTML !== '') {
