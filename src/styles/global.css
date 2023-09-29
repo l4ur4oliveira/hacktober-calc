@@ -195,6 +195,12 @@ button {
     background-color: var(--btn-numbers-bgcolor);
     border: 2px solid var(--btn-numbers-border);
     border-radius: 0.5rem;
+    transition: transform 0.15s ease-in, background-color 0.2s ease-in;
+}
+
+.numbers button:active {
+    transform: scale(1.07);
+    background-color: var(--btn-numbers-bgcolor-active);
 }
 
 .operators {
