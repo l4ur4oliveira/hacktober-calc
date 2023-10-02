@@ -6,6 +6,7 @@ const toolbarThemes = document.querySelector('.toolbar-option.themes');
 const toolbarClear = document.querySelector('.toolbar-option.clear');
 const toolbarDelete = document.querySelector('.toolbar-option.delete');
 const themeList = document.querySelector('.toolbar__themes');
+const toolbarCopy = document.querySelector('.toolbar-option.copy');
 
 toolbarThemes.addEventListener('click', event => {
   event.preventDefault();
@@ -42,6 +43,14 @@ toolbarDelete.addEventListener('click', event => {
   enableMathOperators();
   if (currentNumber.innerHTML != '') {
     currentNumber.innerHTML = currentNumber.innerHTML.slice(0,-1);
+  }
+});
+
+
+toolbarCopy.addEventListener('click', event => {
+  event.preventDefault();
+  if (currentNumber.innerHTML != '') {
+    navigator.clipboard.writeText(currentNumber.innerHTML);
   }
 });
 
