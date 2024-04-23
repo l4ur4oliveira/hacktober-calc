@@ -12,15 +12,23 @@ It's the simplest project to exercise programming skills, DOM manipulation and l
 
 ## How to contribute?
 
--   Including some themes
--   Adding new math operations
--   Improving keybord usage
--   Writing some tests
--   Refactoring something
--   Translating
--   Using your creativity \o/
+- Including some themes
+- Adding new math operations
+- Improving keybord usage
+- Writing some tests
+- Refactoring something
+- Translating
+- Using your creativity \o/
 
 Do you need a guide about PR? Watch [this video](https://youtu.be/nkuYH40cjo4).
+
+### Getting started
+
+> As a simple web project built with pure HTML, CSS and JS, you can run it using [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension if you want. But if you want to explore the testing environment, follow the steps below.
+
+- Install dependencies with `npm install`
+- Run the project with `npm run dev`
+- For tests use `npm run test`
 
 ## Hall of Fame
 
