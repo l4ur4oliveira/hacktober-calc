@@ -1,0 +1,37 @@
+{
+  "name": "hacktober-calc",
+  "version": "1.0.0",
+  "description": "A simple calculator using HTML, CSS and Javascript for Hacktoberfest!",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l4ur4oliveira/hacktober-calc.git"
+  },
+  "keywords": [
+    "hacktoberfest",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Laura de Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l4ur4oliveira/hacktober-calc/issues"
+  },
+  "homepage": "https://github.com/l4ur4oliveira/hacktober-calc#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}
