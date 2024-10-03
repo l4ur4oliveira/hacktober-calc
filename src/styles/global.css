@@ -1,243 +1,247 @@
 @import url("themes.css");
+
 /**
  * ----------------------------------------
  * animation scale-up-ver-top
  * ----------------------------------------
  */
 @-webkit-keyframes scale-up-ver-top {
-    0% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
-    100% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
 }
+
 @keyframes scale-up-ver-top {
-    0% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
-    100% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
-    }
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
 }
 
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
 body * {
-    font-family: "Roboto Mono", sans-serif;
-    font-size: 62.5%;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 62.5%;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--body-bgcolor);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-bgcolor);
 }
 
 button,
 a {
-    transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 button:hover,
 a:hover {
-    filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 
 #machine {
-    width: 90%;
-    padding: 1rem;
-    background-color: var(--machine-bgcolor);
-    border-radius: 1rem;
-    box-shadow: 8px 8px 8px 5px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  padding: 1rem;
+  background-color: var(--machine-bgcolor);
+  border-radius: 1rem;
+  box-shadow: 8px 8px 8px 5px rgba(0, 0, 0, 0.3);
 }
 
 .toolbar {
-    position: relative;
+  position: relative;
 }
 
 .toolbar-option {
-    display: inline-block;
-    margin-bottom: 0.8rem;
-    padding: 0.5rem;
-    background-color: var(--screen-bgcolor);
-    opacity: 0.8;
-    border-radius: 0.2rem;
-    font-size: 0.8rem;
-    color: var(--screen-color);
-    text-decoration: none;
-    cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  background-color: var(--screen-bgcolor);
+  opacity: 0.8;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--screen-color);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .toolbar__themes {
-    /* visibility: hidden; */
-    height: auto;
-    scale: 0;
-    width: 80%;
-    padding: 0.3rem;
-    background-color: rgba(250, 250, 250, 0.8);
-    font-size: 1rem;
-    list-style: none;
-    box-shadow: 3px 3px 3px 0 rgb(0, 0, 0, 0.2);
-    position: absolute;
-    left: 0;
-    top: 2rem;
-    transition: all 0.2s;
-    overflow: hidden;
-    transform-origin: left top;
+  /* visibility: hidden; */
+  height: auto;
+  scale: 0;
+  width: 80%;
+  padding: 0.3rem;
+  background-color: rgba(250, 250, 250, 0.8);
+  font-size: 1rem;
+  list-style: none;
+  box-shadow: 3px 3px 3px 0 rgb(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  transition: all 0.2s;
+  overflow: hidden;
+  transform-origin: left top;
 }
 
 .toolbar__themes.open {
-    margin-top: 10px;
-    visibility: visible;
-    scale: 1;
-    transform-origin: left top;
-    height: auto;
-    border-radius: 8px;
-    z-index: 1;
+  margin-top: 10px;
+  visibility: visible;
+  scale: 1;
+  transform-origin: left top;
+  height: auto;
+  border-radius: 8px;
+  z-index: 1;
 }
 
 .toolbar__themes li {
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.3s;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .toolbar__themes li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .toolbar__themes li::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 6px;
-    right: 0;
-    transition: width 0.3s;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 6px;
+  right: 0;
+  transition: width 0.3s;
 }
 
 .toolbar__themes li:hover::after {
-    width: 70%;
+  width: 70%;
 }
 
 .toolbar__themes.open li {
-    opacity: 1;
+  opacity: 1;
 }
 
 #screen {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 5rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--screen-bgcolor);
-    color: var(--screen-color);
-    text-align: right;
-    border-radius: 0.5rem;
-    overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--screen-bgcolor);
+  color: var(--screen-color);
+  text-align: right;
+  border-radius: 0.5rem;
+  overflow-x: hidden;
 }
 
 #screen .screen__staged {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 #buttons {
-    display: flex;
+  display: flex;
 }
 
 button {
-    margin: 0.2rem;
-    padding: 1rem;
-    font-size: 1.6rem;
-    cursor: pointer;
+  margin: 0.2rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
 .numbers,
 .operators {
-    display: grid;
+  display: grid;
 }
 
 .numbers {
-    width: 100%;
-    grid-template-columns: auto auto auto;
+  width: 100%;
+  grid-template-columns: auto auto auto;
 }
 
 .numbers button {
-    color: var(--btn-numbers-color);
-    background-color: var(--btn-numbers-bgcolor);
-    border: 2px solid var(--btn-numbers-border);
-    border-radius: 0.5rem;
-    transition: transform 0.15s ease-in, background-color 0.2s ease-in;
+  color: var(--btn-numbers-color);
+  background-color: var(--btn-numbers-bgcolor);
+  border: 2px solid var(--btn-numbers-border);
+  border-radius: 0.5rem;
+  transition: transform 0.15s ease-in, background-color 0.2s ease-in;
 }
 
 .numbers button:active {
-    transform: scale(1.07);
-    background-color: var(--btn-numbers-bgcolor-active);
+  transform: scale(1.07);
+  background-color: var(--btn-numbers-bgcolor-active);
 }
 
 .operators {
-    width: 30%;
+  width: 30%;
 }
 
 .operators button {
-    color: var(--btn-operators-color);
-    background-color: var(--btn-operators-bgcolor);
-    border: 2px solid var(--btn-operators-border);
-    border-radius: 0.5rem;
+  color: var(--btn-operators-color);
+  background-color: var(--btn-operators-bgcolor);
+  border: 2px solid var(--btn-operators-border);
+  border-radius: 0.5rem;
 }
 
 .hacktoberfest-logo {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 80px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
 }
 
 @media (min-width: 370px) {
-    #machine {
-        width: 435px;
-    }
+  #machine {
+    width: 435px;
+  }
 }
 
 /* media query for overflowing answer text */
 @media only screen and (max-width: 400px) {
-    #screen .screen__current {
-        height: 45px;
-        font-size: 1.4rem;
-    }
+  #screen .screen__current {
+    height: 45px;
+    font-size: 1.4rem;
+  }
 }
 
 @media only screen and (min-width: 401px) {
-    #screen .screen__current {
-        height: 45px;
-        font-size: 1.7rem;
-    }
+  #screen .screen__current {
+    height: 45px;
+    font-size: 1.7rem;
+  }
 }
