@@ -1,10 +1,5 @@
 import Operations from "./operations.js";
-import {
-  handleToolbarThemes,
-  handleToolbarClear,
-  handleToolbarDelete,
-  handleToolbarCopy,
-} from "./toolbar.js";
+import { handleToolbarThemes, handleToolbarClear, handleToolbarDelete, handleToolbarCopy } from "./toolbar.js";
 
 const root = document.querySelector("html");
 const themeList = document.querySelector(".toolbar__themes");
@@ -81,26 +76,18 @@ operationButtons.forEach((operationButton) => {
     const operator = e.target.textContent;
 
     if (operator === "=") {
-      if (
-        currentNumber.textContent.length > 3 &&
-        currentNumber.textContent.slice(0, 3) === "log"
-      ) {
-        currentNumber.innerHTML = operation.log(
-          parseInt(currentNumber.textContent.slice(3))
-        );
+      if (currentNumber.textContent.length > 3 && currentNumber.textContent.slice(0, 3) === "log") {
+
+        currentNumber.innerHTML = operation.log(parseInt(currentNumber.textContent.slice(3)));
         return;
-      } else if (
-        currentNumber.textContent.length >= 2 &&
-        currentNumber.textContent[currentNumber.textContent.length - 1] === "!"
-      ) {
-        const num = parseInt(
-          currentNumber.textContent.slice(
-            0,
-            currentNumber.textContent.length - 1
-          )
-        );
+
+      } else if (currentNumber.textContent.length >= 2 && currentNumber.textContent[currentNumber.textContent.length - 1] === "!") {
+        
+        const num = parseInt(currentNumber.textContent.slice(0, currentNumber.textContent.length - 1));
         currentNumber.textContent = operation.factorial(num);
+      
       } else if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
+        
         if (currentNumber.innerHTML.includes(".")) {
           lastNumber = parseFloat(currentNumber.textContent);
         } else {
@@ -113,28 +100,18 @@ operationButtons.forEach((operationButton) => {
             break;
 
           case "-":
-            currentNumber.innerHTML = operation.subtraction(
-              firstNumber,
-              lastNumber
-            );
+            currentNumber.innerHTML = operation.subtraction(firstNumber, lastNumber);
             break;
 
           case "*":
-            currentNumber.innerHTML = operation.multiplication(
-              firstNumber,
-              lastNumber
-            );
+            currentNumber.innerHTML = operation.multiplication(firstNumber, lastNumber);
             break;
 
           case "/":
-            currentNumber.innerHTML = operation.division(
-              firstNumber,
-              lastNumber
-            );
+            currentNumber.innerHTML = operation.division(firstNumber,lastNumber );
             break;
           case "^":
             currentNumber.innerHTML = operation.power(firstNumber, lastNumber);
-            console.log("HELLO");
             break;
         }
 
@@ -143,8 +120,9 @@ operationButtons.forEach((operationButton) => {
         resetInput = true;
       }
     } else {
+
       if (currentNumber.innerHTML !== "") {
-        console.log(currentNumber.textContent);
+
         if (currentNumber.innerHTML.includes(".")) {
           firstNumber = parseFloat(currentNumber.textContent);
         } else {
@@ -153,13 +131,13 @@ operationButtons.forEach((operationButton) => {
         showCurrentNumber(operator);
         showStagedOperation();
 
-        operationSymbol = stagedOperation.textContent.slice(
-          stagedOperation.textContent.length - 1
-        );
+        operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
+
       } else {
-        stagedOperation.innerHTML =
-          stagedOperation.textContent.slice(0, -1) + operator;
+
+        stagedOperation.innerHTML = stagedOperation.textContent.slice(0, -1) + operator;
         operationSymbol = operator;
+
       }
     }
   });
