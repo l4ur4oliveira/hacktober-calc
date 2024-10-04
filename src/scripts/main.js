@@ -73,11 +73,7 @@ operationButtons.forEach((operationButton) => {
       return;
     }
 
-    if (currentNumber.innerHTML.includes(".")) {
-      firstNumber = parseFloat(currentNumber.textContent);
-    } else {
-      firstNumber = parseInt(currentNumber.textContent);
-    }
+    firstNumber = currentNumber.innerHTML.includes(".") ? parseFloat(currentNumber.textContent) : parseInt(currentNumber.textContent);
 
     showCurrentNumber(operator);
     showStagedOperation();
@@ -98,11 +94,7 @@ window.factorial = () => {
 window.showResult = () => {
   if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
 
-    if (currentNumber.innerHTML.includes(".")) {
-      lastNumber = parseFloat(currentNumber.textContent);
-    } else {
-      lastNumber = parseInt(currentNumber.textContent);
-    }
+    lastNumber = currentNumber.innerHTML.includes(".") ? parseFloat(currentNumber.textContent) : parseInt(currentNumber.textContent);
 
     switch (operationSymbol) {
       case "+":
