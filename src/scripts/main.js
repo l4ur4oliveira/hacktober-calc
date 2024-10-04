@@ -66,70 +66,58 @@ operationButtons.forEach((operationButton) => {
   operationButton.addEventListener("click", (e) => {
     const operator = e.target.textContent;
 
-    if (operator === "=") {
-      if (currentNumber.textContent.length > 3 && currentNumber.textContent.slice(0, 3) === "log") {
+    if (currentNumber.innerHTML === "") {
+      stagedOperation.innerHTML = stagedOperation.textContent.slice(0, -1) + operator;
+      operationSymbol = operator;
 
-        currentNumber.innerHTML = operation.log(parseInt(currentNumber.textContent.slice(3)));
-        return;
-
-      } else if (currentNumber.textContent.length >= 2 && currentNumber.textContent[currentNumber.textContent.length - 1] === "!") {
-        
-        const num = parseInt(currentNumber.textContent.slice(0, currentNumber.textContent.length - 1));
-        currentNumber.textContent = operation.factorial(num);
-      
-      } else if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
-        
-        if (currentNumber.innerHTML.includes(".")) {
-          lastNumber = parseFloat(currentNumber.textContent);
-        } else {
-          lastNumber = parseInt(currentNumber.textContent);
-        }
-
-        switch (operationSymbol) {
-          case "+":
-            currentNumber.innerHTML = operation.sum(firstNumber, lastNumber);
-            break;
-
-          case "-":
-            currentNumber.innerHTML = operation.subtraction(firstNumber, lastNumber);
-            break;
-
-          case "*":
-            currentNumber.innerHTML = operation.multiplication(firstNumber, lastNumber);
-            break;
-
-          case "/":
-            currentNumber.innerHTML = operation.division(firstNumber,lastNumber );
-            break;
-          case "^":
-            currentNumber.innerHTML = operation.power(firstNumber, lastNumber);
-            break;
-        }
-
-        enableMathOperators();
-        stagedOperation.innerHTML = "";
-        resetInput = true;
-      }
-    } else {
-
-      if (currentNumber.innerHTML !== "") {
-
-        if (currentNumber.innerHTML.includes(".")) {
-          firstNumber = parseFloat(currentNumber.textContent);
-        } else {
-          firstNumber = parseInt(currentNumber.textContent);
-        }
-        showCurrentNumber(operator);
-        showStagedOperation();
-
-        operationSymbol = stagedOperation.textContent.slice(stagedOperation.textContent.length - 1);
-
-      } else {
-
-        stagedOperation.innerHTML = stagedOperation.textContent.slice(0, -1) + operator;
-        operationSymbol = operator;
-
-      }
+      return;
     }
+
+    firstNumber = currentNumber.innerHTML.includes(".") ? parseFloat(currentNumber.textContent) : parseInt(currentNumber.textContent);
+
+    showCurrentNumber(operator);
+    showStagedOperation();
+
+    operationSymbol = operator;
   });
 });
+
+window.logarithm = () => {
+  currentNumber.innerHTML = operation.log(parseInt(currentNumber.textContent))
+}
+
+window.factorial = () => {
+  const num = parseInt(currentNumber.textContent);
+  currentNumber.textContent = operation.factorial(num);
+}
+
+window.showResult = () => {
+  if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
+
+    lastNumber = currentNumber.innerHTML.includes(".") ? parseFloat(currentNumber.textContent) : parseInt(currentNumber.textContent);
+
+    switch (operationSymbol) {
+      case "+":
+        currentNumber.innerHTML = operation.sum(firstNumber, lastNumber);
+        break;
+
+      case "-":
+        currentNumber.innerHTML = operation.subtraction(firstNumber, lastNumber);
+        break;
+
+      case "*":
+        currentNumber.innerHTML = operation.multiplication(firstNumber, lastNumber);
+        break;
+
+      case "/":
+        currentNumber.innerHTML = operation.division(firstNumber,lastNumber );
+        break;
+      case "^":
+        currentNumber.innerHTML = operation.power(firstNumber, lastNumber);
+        break;
+    }
+
+    stagedOperation.innerHTML = "";
+    resetInput = true;
+  }
+}
