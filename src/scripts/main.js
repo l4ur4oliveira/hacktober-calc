@@ -49,20 +49,25 @@ function enableMathOperators() {
   });
 }
 
-// keyboard press for number and clear(backspcae)
-document.addEventListener("keydown", function (e) {
-  if (e.key == parseInt(e.key)) {
-    showCurrentNumber(e.key);
-  } else if (e.key === "Backspace") {
-    enableMathOperators();
-    const screen = document.querySelectorAll("#screen span");
-    screen.forEach((item) => {
-      if (item.innerHTML != "") {
-        item.innerHTML = "";
-      }
-    });
-  }
-});
+/** TODO: Handle keyboard behavior
+ * Does not work with 60% keyboard
+ * For example:
+ * - Shift + =/+ or Shift + 8/*
+ * - Fn + Del
+ */
+// document.addEventListener("keydown", function (e) {
+//   if (e.key == parseInt(e.key)) {
+//     showCurrentNumber(e.key);
+//   } else if (e.key === "Backspace") {
+//     enableMathOperators();
+//     const screen = document.querySelectorAll("#screen span");
+//     screen.forEach((item) => {
+//       if (item.innerHTML != "") {
+//         item.innerHTML = "";
+//       }
+//     });
+//   }
+// });
 
 // Handle calc
 const operation = new Operations();
