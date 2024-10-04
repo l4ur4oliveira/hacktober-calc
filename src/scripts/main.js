@@ -86,18 +86,17 @@ operationButtons.forEach((operationButton) => {
   });
 });
 
+window.logarithm = () => {
+  currentNumber.innerHTML = operation.log(parseInt(currentNumber.textContent))
+}
+
 window.factorial = () => {
   const num = parseInt(currentNumber.textContent);
   currentNumber.textContent = operation.factorial(num);
 }
 
 window.showResult = () => {
-  if (currentNumber.textContent.length > 3 && currentNumber.textContent.slice(0, 3) === "log") {
-
-    currentNumber.innerHTML = operation.log(parseInt(currentNumber.textContent.slice(3)));
-    return;
-
-  } else if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
+  if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
 
     if (currentNumber.innerHTML.includes(".")) {
       lastNumber = parseFloat(currentNumber.textContent);
