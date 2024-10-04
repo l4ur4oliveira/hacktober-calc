@@ -8,8 +8,8 @@ const currentNumber = document.querySelector("#screen .screen__current");
 const stagedOperation = document.querySelector("#screen .screen__staged");
 
 handleToolbarThemes(root, themeList);
-handleToolbarClear(enableMathOperators);
-handleToolbarDelete(currentNumber, enableMathOperators);
+handleToolbarClear();
+handleToolbarDelete(currentNumber);
 handleToolbarCopy(currentNumber);
 
 // Handle screen
@@ -34,20 +34,6 @@ numberButtons.forEach((number) => {
     showCurrentNumber(e.target.textContent);
   });
 });
-
-function disableMathOperators() {
-  const stagedOperation = document.querySelectorAll(".operators button");
-  stagedOperation.forEach((btn) => {
-    btn.disabled = true;
-  });
-}
-
-function enableMathOperators() {
-  const stagedOperation = document.querySelectorAll(".operators button");
-  stagedOperation.forEach((btn) => {
-    btn.disabled = false;
-  });
-}
 
 /** TODO: Handle keyboard behavior
  * Does not work with 60% keyboard
