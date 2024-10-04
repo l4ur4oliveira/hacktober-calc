@@ -25,12 +25,11 @@ export function handleToolbarThemes(root, themeList) {
   });
 }
 
-export function handleToolbarClear(enableMathOperators) {
+export function handleToolbarClear() {
   const toolbarClear = document.querySelector(".toolbar-option.clear");
 
   toolbarClear.addEventListener("click", (event) => {
     event.preventDefault();
-    enableMathOperators();
     const screen = document.querySelectorAll("#screen span");
     screen.forEach((item) => {
       if (item.innerHTML != "") {
@@ -40,12 +39,11 @@ export function handleToolbarClear(enableMathOperators) {
   });
 }
 
-export function handleToolbarDelete(currentNumber, enableMathOperators) {
+export function handleToolbarDelete(currentNumber) {
   const toolbarDelete = document.querySelector(".toolbar-option.delete");
 
   toolbarDelete.addEventListener("click", (event) => {
     event.preventDefault();
-    enableMathOperators();
     if (currentNumber.innerHTML != "") {
       currentNumber.innerHTML = currentNumber.innerHTML.slice(0, -1);
     }
