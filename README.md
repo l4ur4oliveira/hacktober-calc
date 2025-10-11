@@ -1,4 +1,4 @@
-<h1 align="center"><img src="src/images/hacktoberfest11.svg" alt="Hacktobjerfest Logo"><br>2024</h1>
+<h1 align="center"><img src="src/images/hacktoberfest12.svg" alt="Hacktoberfest Logo"><br>2025</h1>
 
 🟢🟡 [Leia em Português](https://github.com/l4ur4oliveira/hacktober-calc/blob/main/README_pt-BR.md)
 
