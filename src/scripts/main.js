@@ -12,7 +12,7 @@ handleToolbarClear();
 handleToolbarDelete(currentNumber);
 handleToolbarCopy(currentNumber);
 
-
+// Handle screen
 function showCurrentNumber(number) {
   currentNumber.innerHTML += number;
 }
@@ -22,7 +22,7 @@ function showStagedOperation() {
   currentNumber.innerHTML = "";
 }
 
-
+// Handle buttons
 const numberButtons = document.querySelectorAll("[data-number]");
 const operationButtons = document.querySelectorAll("[data-operation]");
 numberButtons.forEach((number) => {
@@ -36,6 +36,27 @@ numberButtons.forEach((number) => {
   });
 });
 
+/** TODO: Handle keyboard behavior
+ * Does not work with 60% keyboard
+ * For example:
+ * - Shift + =/+ or Shift + 8/*
+ * - Fn + Del
+ */
+// document.addEventListener("keydown", function (e) {
+//   if (e.key == parseInt(e.key)) {
+//     showCurrentNumber(e.key);
+//   } else if (e.key === "Backspace") {
+//     enableMathOperators();
+//     const screen = document.querySelectorAll("#screen span");
+//     screen.forEach((item) => {
+//       if (item.innerHTML != "") {
+//         item.innerHTML = "";
+//       }
+//     });
+//   }
+// });
+
+// Handle calc
 const operation = new Operations();
 let firstNumber = 0,
   lastNumber = 0,
@@ -58,7 +79,6 @@ function toRadians(deg) {
 function toDegrees(rad) {
   return (rad * 180) / Math.PI;
 }
-
 
 operationButtons.forEach((operationButton) => {
   operationButton.addEventListener("click", (e) => {
@@ -130,7 +150,6 @@ window.atan = () => {
   if (isDegreeMode) val = toDegrees(val);
   currentNumber.textContent = val.toFixed(5);
 };
-
 
 window.showResult = () => {
   if (currentNumber.innerHTML !== "" && firstNumber !== 0) {
