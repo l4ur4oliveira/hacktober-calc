@@ -30,7 +30,6 @@ class Operations {
     return power;
   }
 
-  
   sin(x) {
     return Math.sin(x);
   }
