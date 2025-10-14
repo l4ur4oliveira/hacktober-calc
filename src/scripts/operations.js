@@ -1,4 +1,3 @@
-// The calculator magic works here
 class Operations {
   sum(x, y) {
     return x + y;
@@ -25,16 +24,35 @@ class Operations {
   }
 
   factorial(x) {
-    if (x === 0 || x === 1) {
-      return 1;
-    }
-
+    if (x === 0 || x === 1) return 1;
     let power = 1;
-    for (let i = 2; i <= x; i++) {
-      power *= i;
-    }
-
+    for (let i = 2; i <= x; i++) power *= i;
     return power;
+  }
+
+  
+  sin(x) {
+    return Math.sin(x);
+  }
+
+  cos(x) {
+    return Math.cos(x);
+  }
+
+  tan(x) {
+    return Math.tan(x);
+  }
+
+  asin(x) {
+    return Math.asin(x);
+  }
+
+  acos(x) {
+    return Math.acos(x);
+  }
+
+  atan(x) {
+    return Math.atan(x);
   }
 }
 
