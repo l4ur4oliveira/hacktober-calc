@@ -1,105 +1,103 @@
 <!DOCTYPE html>
 <html lang="en" class="default">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scientific Calculator</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Scientific Calculator</title>
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-    />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" />
+		<link rel="stylesheet" href="./src/styles/global.css" />
+	 
+		<script type="module" src="./src/scripts/main.js" defer></script>
+		<script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+	</head>
 
-    <link rel="stylesheet" href="./src/styles/global.css" />
+	<body>
+		<div class="container">
+			<sidebar>
+				<h1>🧮 Scientific Calculator</h1>
+				<p>
+					This calculator supports basic arithmetic and advanced operations like
+					factorial, powers, logarithms, and trigonometric functions. It’s built
+					using <b>HTML, CSS, and JavaScript</b>.
+				</p>
+				<a href="https://github.com/l4ur4oliveira/hacktober-calc" target="_blank"><i class="ph-bold ph-github-logo"></i> View on GitHub</a>
+                <a href="https://hacktoberfest.com/" target="_blank">
+                  <img class="hacktoberfest-logo" src="./src/images/hacktoberfest12.svg" alt="Hacktoberfest 2025 logo" />
+                </a>
+			</sidebar>
 
-   
-    <script type="module" src="./src/scripts/main.js" defer></script>
-    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
-  </head>
+			<main id="machine">
+			 
+				<nav class="toolbar">
+					<a class="toolbar-option themes">Themes</a>
+					<a class="toolbar-option clear">Clear</a>
+					<a class="toolbar-option delete">Delete</a>
+					<a class="toolbar-option copy">Copy</a>
 
-  <body>
-    <div class="container">
-      <sidebar>
-        <h1>🧮 Scientific Calculator</h1>
-        <p>
-          This calculator supports basic arithmetic and advanced operations like
-          factorial, powers, logarithms, and trigonometric functions. It’s built
-          using <b>HTML, CSS, and JavaScript</b>.
-        </p>
-        <a href="https://github.com/l4ur4oliveira/hacktober-calc" target="_blank"
-          ><i class="ph-bold ph-github-logo"></i> View on GitHub</a
-        >
-      </sidebar>
+					<ul class="toolbar__themes">
+						<li class="default">Default</li>
+						<li class="dracula">Dracula</li>
+						<li class="monokai">Monokai</li>
+						<li class="amoled">Amoled</li>
+						<li class="ocean">Ocean</li>
+						<li class="candy">Candy</li>
+						<li class="rainbow">Rainbow</li>
+						<li class="beach">Beach</li>
+						<li class="vintage">Vintage</li>
+						<li class="halloween">Halloween</li>
+						<li class="carbon">Carbon</li>
+					</ul>
+				</nav>
 
-      <main id="machine">
-       
-        <nav class="toolbar">
-          <a class="toolbar-option themes">Themes</a>
-          <a class="toolbar-option clear">Clear</a>
-          <a class="toolbar-option delete">Delete</a>
-          <a class="toolbar-option copy">Copy</a>
+				
+				<div id="screen">
+					<span class="screen__staged"></span>
+					<span class="screen__current" style="margin-right: -10px"></span>
+				</div>
 
-          <ul class="toolbar__themes">
-            <li class="default">Default</li>
-            <li class="dracula">Dracula</li>
-            <li class="monokai">Monokai</li>
-            <li class="amoled">Amoled</li>
-            <li class="ocean">Ocean</li>
-            <li class="candy">Candy</li>
-            <li class="rainbow">Rainbow</li>
-            <li class="beach">Beach</li>
-            <li class="vintage">Vintage</li>
-            <li class="halloween">Halloween</li>
-            <li class="carbon">Carbon</li>
-          </ul>
-        </nav>
+				
+				<section id="buttons">
+					<section class="numbers">
+					 
+						<button onclick="logarithm()">log<sub>10</sub></button>
+						<button data-operation>^</button>
+						<button onclick="factorial()">!</button>
 
-        
-        <div id="screen">
-          <span class="screen__staged"></span>
-          <span class="screen__current" style="margin-right: -10px"></span>
-        </div>
+					 
+						<button onclick="sin()">sin</button>
+						<button onclick="cos()">cos</button>
+						<button onclick="tan()">tan</button>
+						<button onclick="asin()">asin</button>
+						<button onclick="acos()">acos</button>
+						<button onclick="atan()">atan</button>
 
-        
-        <section id="buttons">
-          <section class="numbers">
-           
-            <button onclick="logarithm()">log<sub>10</sub></button>
-            <button data-operation>^</button>
-            <button onclick="factorial()">!</button>
+					 
+						<button data-number>1</button>
+						<button data-number>2</button>
+						<button data-number>3</button>
+						<button data-number>4</button>
+						<button data-number>5</button>
+						<button data-number>6</button>
+						<button data-number>7</button>
+						<button data-number>8</button>
+						<button data-number>9</button>
+						<button data-number>0</button>
+						<button data-number>.</button>
+						<button onclick="showResult()">=</button>
+					</section>
 
-           
-            <button onclick="sin()">sin</button>
-            <button onclick="cos()">cos</button>
-            <button onclick="tan()">tan</button>
-            <button onclick="asin()">asin</button>
-            <button onclick="acos()">acos</button>
-            <button onclick="atan()">atan</button>
-
-           
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-number>0</button>
-            <button data-number>.</button>
-            <button onclick="showResult()">=</button>
-          </section>
-
-          <section class="operators">
-            <button data-operation>/</button>
-            <button data-operation>*</button>
-            <button data-operation>-</button>
-            <button data-operation>+</button>
-          </section>
-        </section>
-      </main>
-    </div>
-  </body>
+					<section class="operators">
+						<button data-operation>/</button>
+						<button data-operation>*</button>
+						<button data-operation>-</button>
+						<button data-operation>+</button>
+					</section>
+				</section>
+			</main>
+		</div>
+	</body>
 </html>
