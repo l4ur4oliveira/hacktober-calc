@@ -135,3 +135,16 @@
   --btn-operators-bgcolor: #f66e0d;
   --btn-operators-border: #f66e0d;
 }
+
+.sunset:root{
+  --body-bgcolor: #ff6b6b;
+  --machine-bgcolor: #fff5e6;
+  --screen-bgcolor: #ffe0b3;
+  --screen-color: #8b4513;
+  --btn-numbers-color: #ffffff;
+  --btn-numbers-bgcolor: #ff8c42;
+  --btn-numbers-border: #ff8c42;
+  --btn-operators-color: #ffffff;
+  --btn-operators-bgcolor: #e63946;
+  --btn-operators-border: #e63946;
+}
